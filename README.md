@@ -2,8 +2,6 @@
 
 Welcome to Codeak's official portfolio repository! We're a web development company that believes in the power of simplicity - clean code, fast loading, and exceptional user experiences.
 
-## 🚀 Live Demo
-[View Live Website](https://mazen-daghash.github.io/Company-Portfolio/)
 
 ## 🛠️ Built With
 - HTML5
