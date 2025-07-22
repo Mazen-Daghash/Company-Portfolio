@@ -2121,6 +2121,8 @@ section .container {
 
 /* Portfolio Section */
 .portfolio {
+    position: relative;
+    overflow: hidden;
     padding: 120px 0;
     background-color: #0f172a;
     position: relative;
@@ -2155,15 +2157,28 @@ section .container {
 
 .portfolio-item {
     position: relative;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #1e293b;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-25px);
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: translateY(-25px);
+}
+
+.portfolio-item .portfolio-overlay {
+    transition: all 0.4s ease;
+    transform: translateY(0);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(-25px);
     box-shadow: 0 20px 50px rgba(108, 99, 255, 0.3);
 }
 
@@ -4888,7 +4903,83 @@ section .container {
 }
 
 /* Responsive styles */
+/* Process Section Mobile Styles */
 @media (max-width: 768px) {
+    .diff-dot {
+        display: none !important;
+    }
+    
+    .diff-line-wrapper {
+        padding: 20px 0;
+    }
+    
+    .diff-line {
+        background: linear-gradient(180deg, #6c63ff, #9c95ff) !important;
+        width: 2px !important;
+        left: 50% !important;
+        top: 30px !important;
+        bottom: 30px !important;
+        height: auto !important;
+        transform: translateX(-50%);
+    }
+    
+    .process-step {
+        width: 100% !important;
+        margin-bottom: 1rem;
+        padding: 0 10px;
+    }
+    
+    .step-content {
+        padding: 15px;
+        margin: 10px 0;
+        height: auto !important;
+        min-height: 150px;
+        border-radius: 8px;
+    }
+    
+    .step-number {
+        font-size: 1.2rem !important;
+        top: 10px !important;
+        left: 20px !important;
+        font-weight: 700;
+        color: #6c63ff;
+        opacity: 0.8;
+    }
+    
+    .step-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .step-title {
+        font-size: 1.1rem !important;
+        margin: 5px 0 8px 0 !important;
+    }
+    
+    .step-desc, .step-description {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+        padding-top: 5px !important;
+        margin: 0 !important;
+    }
+    
+    .step-desc, .step-description {
+        display: block !important;
+        opacity: 1 !important;
+        max-height: none !important;
+        padding-top: 15px;
+    }
+    
+    .process-timeline {
+        padding: 0 10px;
+    }
+    
+    .timeline-wrapper {
+        padding: 0 10px;
+    }
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 25px;
