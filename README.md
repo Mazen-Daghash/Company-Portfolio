@@ -7,8 +7,6 @@
 
 Welcome to Codeak's official portfolio - a modern, responsive website showcasing our web development expertise with clean code and exceptional user experience.
 
-## 🚀 Live Demo
-[View Live Website](https://mazen-daghash.github.io/Company-Portfolio/)
 
 ## ✨ Features
 
