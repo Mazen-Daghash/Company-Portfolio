@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name | Codeak</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --gray-dark: #475569;
+        }
+        
+        /* Project Hero */
+        .project-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .project-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 20px;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-tagline {
+            font-size: 1.3rem;
+            color: #e0e7ff;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        /* Project Meta */
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .meta-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .meta-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .meta-card h4 {
+            color: var(--primary-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 10px;
+        }
+        
+        .meta-card p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        /* Project Content */
+        .project-section {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+        
+        .project-overview {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .project-text p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* Gallery */
+        .project-gallery {
+            padding: 100px 0;
+            background: var(--dark-light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Process Section */
+        .project-process {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1e2f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+        
+        .process-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                var(--primary-light), 
+                var(--primary), 
+                var(--primary-light), 
+                transparent);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .process-item {
+            position: relative;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: flex-start;
+            z-index: 2;
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 30px;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.2);
+        }
+        
+        .process-content {
+            background: var(--dark-light);
+            padding: 25px 30px;
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .process-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-content h3 {
+            color: white;
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .process-content p {
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Results Section */
+        .project-results {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+        
+        .result-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 15px;
+            line-height: 1;
+        }
+        
+        .result-card h3 {
+            color: #fff;
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .result-card p {
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .project-hero {
+                padding: 160px 0 90px;
+            }
+            
+            .project-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .project-title {
+                font-size: 2.8rem;
+            }
+            
+            .project-meta {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .process-item:nth-child(odd) {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+            
+            .process-item:nth-child(odd) .process-content {
+                margin-right: 30px;
+                margin-left: 0;
+            }
+            
+            .process-item:nth-child(even) .process-content {
+                margin-left: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 140px 0 80px;
+            }
+            
+            .project-title {
+                font-size: 2.5rem;
+                padding: 0 15px;
+            }
+            
+            .project-tagline {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+            
+            .project-meta {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 60px;
+            }
+            
+            .process-item,
+            .process-item:nth-child(odd) {
+                flex-direction: column;
+                text-align: left;
+                align-items: center;
+                margin-bottom: 40px;
+            }
+            
+            .process-number {
+                margin: 0 0 20px 0;
+            }
+            
+            .process-content,
+            .process-item:nth-child(odd) .process-content,
+            .process-item:nth-child(even) .process-content {
+                margin: 0 !important;
+                text-align: center;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .project-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-category {
+                font-size: 13px;
+                padding: 6px 16px;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .process-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-category {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Codeak" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#process" class="nav-link">Process</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#portfolio" class="nav-link">Work</a></li>
+                <li><a href="index.html#packages" class="nav-link">Packages</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <span class="project-category" data-aos="fade-up">Branding & Identity</span>
+            <h1 class="project-title" data-aos="fade-up" data-aos-delay="100">Project Name</h1>
+            <p class="project-tagline" data-aos="fade-up" data-aos-delay="200">A brief tagline that describes the project and its impact.</p>
+            
+            <div class="project-meta">
+                <div class="meta-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Client</h4>
+                    <p>Client Name</p>
+                </div>
+                <div class="meta-card" data-aos="fade-up" data-aos-delay="150">
+                    <h4>Services</h4>
+                    <p>Branding, Web Design, Development</p>
+                </div>
+                <div class="meta-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Year</h4>
+                    <p>2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-overview" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Project Overview</h2>
+                    <p>Brief introduction to the project and its objectives</p>
+                </div>
+                <div class="project-text">
+                    <p>Provide a detailed overview of the project, including the client's needs, challenges, and the solution you provided. Explain the thought process behind your design decisions and how they align with the client's goals.</p>
+                    <p>Highlight any unique aspects of the project, such as specific design elements, technical implementations, or innovative approaches that were taken to solve the client's problems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="project-gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="https://via.placeholder.com/1200x800" alt="Project Image 1">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://via.placeholder.com/800x1000" alt="Project Image 2">
+                </div>
+                <!-- Add more gallery items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Process -->
+    <section class="project-process">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Process</h2>
+                <p>How we transformed the brand through a structured approach</p>
+            </div>
+            
+            <div class="process-timeline">
+                <!-- Process Line -->
+                <div class="process-line" data-aos="fade" data-aos-duration="1500"></div>
+                
+                <!-- Process Item 1 -->
+                <div class="process-item" data-aos="fade-up">
+                    <div class="process-number">01</div>
+                    <div class="process-content">
+                        <h3>Discovery & Research</h3>
+                        <p>Conducted in-depth interviews with stakeholders and analyzed competitors to understand the market landscape and define the brand's unique position.</p>
+                    </div>
+                </div>
+                
+                <!-- Process Item 2 -->
+                <div class="process-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-number">02</div>
+                    <div class="process-content">
+                        <h3>Concept Development</h3>
+                        <p>Created multiple design directions, exploring typography, color palettes, and visual elements that align with the brand's identity and values.</p>
+                    </div>
+                </div>
+                
+                <!-- Process Item 3 -->
+                <div class="process-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-number">03</div>
+                    <div class="process-content">
+                        <h3>Design Refinement</h3>
+                        <p>Refined the selected direction based on feedback, ensuring the visual identity works across all touchpoints and applications.</p>
+                    </div>
+                </div>
+                
+                <!-- Process Item 4 -->
+                <div class="process-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-number">04</div>
+                    <div class="process-content">
+                        <h3>Delivery & Guidelines</h3>
+                        <p>Prepared comprehensive brand guidelines and assets for seamless implementation across all platforms and media.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Results -->
+    <section class="project-results">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Results & Impact</h2>
+                <p>The success metrics and outcomes of the project</p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card" data-aos="fade-up">
+                    <div class="result-number">+200%</div>
+                    <h3>Brand Awareness</h3>
+                    <p>Increase in social media engagement and website traffic</p>
+                </div>
+                <div class="result-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="result-number">+150%</div>
+                    <h3>Lead Generation</h3>
+                    <p>More inquiries and conversions after the rebrand</p>
+                </div>
+                <div class="result-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="result-number">100%</div>
+                    <h3>Client Satisfaction</h3>
+                    <p>Exceeded expectations and delivered on all project goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo-light.png" alt="Codeak" class="footer-logo-img">
+                    </a>
+                    <p class="footer-about-text">Creating beautiful digital experiences that drive results. We help businesses grow through strategic design and development.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/codeak_tech/" class="social-link" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item"><a href="index.html" class="footer-link">Home</a></li>
+                        <li class="footer-nav-item"><a href="index.html#about" class="footer-link">About</a></li>
+                        <li class="footer-nav-item"><a href="index.html#services" class="footer-link">Services</a></li>
+                        <li class="footer-nav-item"><a href="index.html#process" class="footer-link">Process</a></li>
+                        <li class="footer-nav-item"><a href="index.html#portfolio" class="footer-link">Portfolio</a></li>
+                        <li class="footer-nav-item"><a href="index.html#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Our Services</h3>
+                    <ul class="footer-nav">
+                        <li class="footer-nav-item"><a href="#" class="footer-link">Web Design</a></li>
+                        <li class="footer-nav-item"><a href="#" class="footer-link">Branding</a></li>
+                        <li class="footer-nav-item"><a href="#" class="footer-link">UI/UX Design</a></li>
+                        <li class="footer-nav-item"><a href="#" class="footer-link">Web Development</a></li>
+                        <li class="footer-nav-item"><a href="#" class="footer-link">Digital Marketing</a></li>
+                        <li class="footer-nav-item"><a href="#" class="footer-link">SEO Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Get in Touch</h3>
+                    <ul class="footer-contact-info">
+                        <li class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>5 MOHANDES MOHAMED SHAWKY ST. ZEZENIA - ALEXANDRIA</span>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+201100075005" class="footer-link">+20 1100075005</a>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:codeak.tech" class="footer-link">codeak.tech</a>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fab fa-instagram contact-icon"></i>
+                            <a href="https://www.instagram.com/codeak_tech/" class="footer-link" target="_blank">@codeak_tech</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2024<a href="index.html" class="footer-link">Codeak</a>. All rights reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html" class="legal-link">Privacy Policy</a>
+                    <span class="divider">•</span>
+                    <a href="terms-of-service.html" class="legal-link">Terms of Service</a>
+                    <span class="divider">•</span>
+                    <a href="#" class="legal-link">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            // Toggle Nav
+            navLinks.classList.toggle('open');
+            
+            // Animate Links
+            navLinksItems.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            
+            // Hamburger Animation
+            hamburger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
