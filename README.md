@@ -7,6 +7,9 @@
 
 Welcome to Codeak's official portfolio - a modern, responsive website showcasing our web development expertise with clean code and exceptional user experience.
 
+##    live demo
+https://codeak.tech/
+
 
 ## ✨ Features
 
