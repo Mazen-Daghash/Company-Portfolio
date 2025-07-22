@@ -8,7 +8,7 @@
 Welcome to Codeak's official portfolio - a modern, responsive website showcasing our web development expertise with clean code and exceptional user experience.
 
 ## 🚀 Live Demo
-[View Live Website](https://mazen-daghash.github.io/Company-Portfolio/)
+[View Live Website](https://codeak.tech/)
 
 ## ✨ Features
 
@@ -39,5 +39,5 @@ Welcome to Codeak's official portfolio - a modern, responsive website showcasing
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/Mazen-Daghash/Company-Portfolio.git](https://github.com/Mazen-Daghash/Company-Portfolio.git)
+   git clone https://github.com/Mazen-Daghash/Company-Portfolio.git
    cd Company-Portfolio
